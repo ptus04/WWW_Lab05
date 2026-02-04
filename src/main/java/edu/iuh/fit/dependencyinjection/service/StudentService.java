@@ -8,4 +8,6 @@ public interface StudentService {
     Student save(Student student);
     List<Student> findAll();
     Student findById(Integer id);
+
+    List<Student> findByNameContaining(String name);
 }

@@ -27,6 +27,11 @@ public class StudentController {
         return service.findAll();
     }
 
+    @GetMapping("/find")
+    public List<Student> findStudent(@RequestParam String name) {
+        return service.findByNameContaining(name);
+    }
+
     @GetMapping("/{id}")
     public Student getById(@PathVariable Integer id) {
         return service.findById(id);

@@ -2,11 +2,13 @@ package edu.iuh.fit.dependencyinjection.service;
 
 import edu.iuh.fit.dependencyinjection.model.Student;
 import edu.iuh.fit.dependencyinjection.repository.StudentRepository;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service("studentService1")
+@Primary
 public class StudentServiceImpl implements StudentService {
 
     private final StudentRepository repository;
@@ -29,5 +31,12 @@ public class StudentServiceImpl implements StudentService {
     public Student findById(Integer id) {
         return repository.findById(id).orElse(null);
     }
+
+    @Override
+    public List<Student> findByNameContaining(String name) {
+        return repository.findByNameContaining(name);
+    }
+
+
 }
 
