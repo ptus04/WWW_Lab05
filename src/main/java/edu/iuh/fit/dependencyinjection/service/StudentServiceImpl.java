@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+@Service("studentService1")
 public class StudentServiceImpl implements StudentService {
 
     private final StudentRepository repository;
